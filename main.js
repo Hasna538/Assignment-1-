@@ -1,5 +1,3 @@
-/* ========== script.js ========== */
-/* Theme toggle, mobile menu, smooth scroll offset, contact form UI */
 
 // DOM elements
 const themeToggle = document.getElementById('themeToggle');
