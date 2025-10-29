@@ -1,7 +1,4 @@
-/* ========== style.css ========== */
-/* VIP color theme, gradients, smooth animations, responsive */
 
-/* ----- VARIABLES ----- */
 :root{
   --bg: #0f1724;         /* dark bg base (light mode will invert) */
   --card: #0b1220;
