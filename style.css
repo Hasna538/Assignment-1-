@@ -1,0 +1,138 @@
+/* ========== style.css ========== */
+/* VIP color theme, gradients, smooth animations, responsive */
+
+/* ----- VARIABLES ----- */
+:root{
+  --bg: #0f1724;         /* dark bg base (light mode will invert) */
+  --card: #0b1220;
+  --glass: rgba(255,255,255,0.04);
+  --text: #e6eef8;
+  --muted: #98a0b3;
+  --accent1: #00b4ff;
+  --accent2: #6a00ff;
+  --accent-grad: linear-gradient(135deg,var(--accent1),var(--accent2));
+  --glass-2: rgba(255,255,255,0.03);
+  --radius: 14px;
+}
+
+/* Light theme overrides */
+body.light {
+  --bg: #fbfbff;
+  --card: #ffffff;
+  --glass: rgba(0,0,0,0.03);
+  --text: #071033;
+  --muted: #4b5563;
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: radial-gradient(1200px 400px at 10% 10%, rgba(0,180,255,0.06), transparent), var(--bg);
+  color:var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  transition: background .45s ease, color .35s ease;
+  scroll-behavior: smooth;
+}
+
+/* Container */
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:60;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;padding:18px 0;
+}
+.brand{font-size:1.1rem;font-weight:700;letter-spacing:0.2px}
+.brand span{background:linear-gradient(90deg,var(--accent1),var(--accent2)); -webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* NAV */
+.main-nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+.main-nav a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600;opacity:0.95;transition:all .25s}
+.main-nav a:hover, .main-nav a:focus{transform:translateY(-3px); box-shadow: 0 8px 30px rgba(106,0,255,0.08)}
+.main-nav a:active{transform:none}
+
+/* Controls */
+.controls{display:flex;gap:8px;align-items:center}
+.btn-icon{background:transparent;border:1px solid transparent;padding:8px;border-radius:10px;cursor:pointer;color:var(--text);font-size:18px}
+.btn-icon:hover{transform:translateY(-3px)}
+.mobile-only{display:none}
+
+/* Sections */
+.section{padding:64px 0}
+.section-alt{background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+
+/* Section head */
+.section-head{margin-bottom:22px}
+.section-head h2{font-size:1.6rem;margin-bottom:6px}
+.section-head .muted{color:var(--muted)}
+
+/* About grid */
+.about-grid{display:grid;grid-template-columns: 260px 1fr;gap:28px;align-items:center}
+.profile-card{width:260px;border-radius:var(--radius);overflow:hidden;background:var(--card);box-shadow: 0 8px 30px rgba(2,6,23,0.6);padding:18px}
+.profile-svg{width:100%;height:auto;display:block;border-radius:12px}
+.about-text .lead{font-size:1.05rem;color:var(--text);margin-bottom:8px}
+.cta{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent-grad);color:white;text-decoration:none;font-weight:700;box-shadow: 0 8px 30px rgba(0,180,255,0.12);transition:transform .25s}
+.cta:hover{transform:translateY(-4px);filter:brightness(1.03)}
+
+/* Skills */
+.skills-grid{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0;margin:10px 0}
+.skill{padding:10px 14px;border-radius:999px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03);font-weight:700;color:var(--text);transition:transform .2s, box-shadow .25s}
+.skill:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(0,0,0,0.25)}
+
+/* Projects grid */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:18px}
+.project-card{background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid var(--glass-2);transition:transform .35s, box-shadow .35s;display:flex;flex-direction:column}
+.project-card:hover{transform:translateY(-10px);box-shadow: 0 30px 80px rgba(9,10,30,0.6)}
+.project-inner h3{margin:0 0 8px 0}
+.project-inner p{color:var(--muted);flex:1}
+.project-actions{display:flex;gap:12px;align-items:center;margin-top:16px}
+.btn{display:inline-block;padding:8px 14px;border-radius:10px;background:var(--accent-grad);color:white;text-decoration:none;font-weight:700}
+.btn:hover{transform:translateY(-4px)}
+.link-muted{color:var(--muted);text-decoration:none;font-weight:600}
+
+/* Contact form */
+.contact-form{margin-top:8px;background:transparent;padding:14px;border-radius:12px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-grid .full{grid-column:1 / -1}
+.label{display:block;font-weight:700;margin-bottom:6px;color:var(--text)}
+input,textarea{
+  width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);
+  background:transparent;color:var(--text);outline:none;transition:box-shadow .2s,border-color .2s;
+}
+input:focus,textarea:focus{box-shadow:0 8px 30px rgba(0,180,255,0.06);border-color:var(--accent1)}
+.error{color:#ffb4b4;font-size:.9rem;height:18px;margin-top:6px;display:block}
+.form-actions{display:flex;align-items:center;gap:12px}
+.form-status{color:var(--muted);font-weight:600}
+
+/* Footer */
+.site-footer{padding:20px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+
+/* Responsive */
+@media (max-width:960px){
+  .projects-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns: 180px 1fr}
+}
+@media (max-width:720px){
+  .main-nav{display:none}
+  .mobile-only{display:inline-block}
+  .mobile-menu{display:block;background:var(--card);border-top:1px solid rgba(255,255,255,0.02)}
+  .mobile-menu ul{list-style:none;padding:10px;margin:0;display:flex;flex-direction:column;gap:8px}
+  .mobile-menu a{padding:8px 12px;border-radius:8px}
+  .about-grid{grid-template-columns:1fr;gap:18px;text-align:center}
+  .profile-card{margin:0 auto}
+  .projects-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+}
+
+/* Small touch ups */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}

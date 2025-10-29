@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hasnat Nadeem — Portfolio</title>
+  <meta name="description" content="Portfolio of Hasnat Nadeem — HTML5, CSS3, JavaScript project.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Hasnat <span>Nadeem</span></h1>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="controls">
+        <button id="themeToggle" class="btn-icon" aria-pressed="false" title="Toggle dark/light">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <button id="menuToggle" class="btn-icon mobile-only" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+      </div>
+    </div>
+
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <!-- Inline SVG profile to avoid extra image file -->
+        <figure class="profile-card" aria-hidden="false">
+          <svg class="profile-svg" width="220" height="220" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profile illustration">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#00b4ff"/>
+                <stop offset="1" stop-color="#6a00ff"/>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" rx="18" fill="url(#g1)"/>
+            <g transform="translate(20,28)" fill="#fff" opacity="0.95">
+              <circle cx="60" cy="50" r="36" />
+              <rect x="6" y="112" width="120" height="28" rx="8" />
+            </g>
+          </svg>
+          <figcaption class="sr-only">Profile image of Hasnat</figcaption>
+        </figure>
+
+        <article class="about-text">
+          <h2>About Me</h2>
+          <p class="lead">Assalamualaikum — I'm <strong>Hasnat Nadeem</strong>, a web developer who builds responsive, accessible and interactive websites using <em>HTML5</em>, <em>CSS3</em> and <em>JavaScript</em>. I enjoy clean UI, smooth animations and writing reusable code.</p>
+          <p>I focus on performance and mobile-first responsive design. Below are my skills and sample projects.</p>
+          <p><a class="cta" href="#projects">View Projects ➜</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <header class="section-head">
+          <h2>Skills</h2>
+          <p class="muted">A few technologies and tools I use</p>
+        </header>
+
+        <ul class="skills-grid" aria-label="Skills list">
+          <li class="skill">HTML5</li>
+          <li class="skill">CSS3 (Flexbox & Grid)</li>
+          <li class="skill">JavaScript (ES6+)</li>
+          <li class="skill">Responsive Design</li>
+          <li class="skill">Version Control (Git)</li>
+          <li class="skill">React (Basics)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Projects</h2>
+          <p class="muted">Sample projects (links are placeholders)</p>
+        </header>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-inner">
+              <h3>Portfolio Website</h3>
+              <p>A modern, responsive portfolio built with semantic HTML, CSS and JS. Includes dark/light theme and smooth navigation.</p>
+              <div class="project-actions">
+                <a class="btn" href="#" target="_blank" rel="noopener">View</a>
+                <a class="link-muted" href="#" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-inner">
+              <h3>Weather App</h3>
+              <p>Small weather app using fetch to get data from a public API and display current forecast.</p>
+              <div class="project-actions">
+                <a class="btn" href="#" target="_blank" rel="noopener">Try</a>
+                <a class="link-muted" href="#" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-inner">
+              <h3>To-Do List</h3>
+              <p>Accessible to-do app with localStorage persistence and keyboard-friendly UI.</p>
+              <div class="project-actions">
+                <a class="btn" href="#" target="_blank" rel="noopener">Open</a>
+                <a class="link-muted" href="#" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <header class="section-head">
+          <h2>Contact</h2>
+          <p class="muted">Send a message — UI only (no backend required)</p>
+        </header>
+
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="form-grid">
+            <label>
+              <span class="label">Name</span>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+              <span class="error" id="err-name"></span>
+            </label>
+
+            <label>
+              <span class="label">Email</span>
+              <input type="email" id="email" name="email" required placeholder="you@example.com">
+              <span class="error" id="err-email"></span>
+            </label>
+
+            <label class="full">
+              <span class="label">Message</span>
+              <textarea id="message" name="message" rows="6" required placeholder="Write your message..."></textarea>
+              <span class="error" id="err-message"></span>
+            </label>
+
+            <div class="form-actions full">
+              <button type="submit" class="btn primary">Send Message</button>
+              <span id="formStatus" aria-live="polite" class="form-status"></span>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 Hasnat Nadeem • Built with HTML5, CSS3 & JavaScript</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
